@@ -1,0 +1,627 @@
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.carousel-inner img {
+  max-height: 400px;
+}
+
+#header-berita {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 2px #000000;
+  font-size: xx-large;
+}
+
+.box1 {
+  margin-bottom: 20px;
+  float: left;
+  padding: 17px;
+  margin-right: 20px;
+  margin-left: 50px;
+}
+
+.box2 {
+  margin-bottom: 20px;
+  float: left;
+  margin-right: 20px;
+  padding: 17px;
+}
+
+.box3 {
+  margin-bottom: 20px;
+  float: left;
+  padding: 17px;
+}
+
+hr {
+  height: 1px;
+  margin-top: 50px;
+}
+
+#header-lowongan {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 2px #000000;
+  font-size: xx-large;
+}
+
+.card1 {
+  margin-left: 130px;
+  float: left;
+  padding: 17px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.card2 {
+  padding: 17px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.card3 {
+  padding: 17px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#btnSelengkapnya2 {
+  margin-bottom: 50px;
+}
+
+section {
+  padding: 60px;
+}
+
+section .section-title {
+  text-align: center;
+  color: #204ab4;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+/* #footer {
+  background: #204ab4 !important;
+} */
+#footer h5 {
+  padding-left: 10px;
+  border-left: 3px solid #eeeeee;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+#footer a {
+  color: #ffffff;
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li {
+  padding: 3px 0;
+}
+#footer ul.social li a i {
+  margin-right: 5px;
+  font-size: 25px;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+#footer ul.social li:hover a i {
+  font-size: 30px;
+  margin-top: -10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a {
+  color: #ffffff;
+}
+#footer ul.social li a:hover {
+  color: #eeeeee;
+}
+#footer ul.quick-links li {
+  padding: 3px 0;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+#footer ul.quick-links li:hover {
+  padding: 3px 0;
+  margin-left: 5px;
+  font-weight: 700;
+}
+#footer ul.quick-links li a i {
+  margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+  font-weight: 700;
+}
+
+.h6 {
+  margin-top: 100px;
+  margin-bottom: -20px;
+}
+
+/* @media (max-width: 767px) {
+  #footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+  }
+} */
+
+#footer img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Styling Login Form */
+
+@import "bourbon";
+
+body {
+  background: #eee !important;
+}
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 20px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.form-header {
+  margin: -15px -35px 40px;
+  padding: 10px 35px 2px;
+  height: 60px;
+  text-align: center;
+  background: #2c5cd6;
+  color: #fff;
+  border-radius: 5px;
+}
+
+#username {
+  margin-bottom: 10px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+#password {
+  margin-bottom: 10px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.form-signin-heading,
+.checkbox {
+  margin-bottom: 20px;
+}
+
+.checkbox {
+  font-weight: normal;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#daftar {
+  margin-top: 15px;
+  font-size: small;
+  text-align: center;
+}
+
+#btnMasuk {
+  border-radius: 50px;
+  width: 100px;
+  height: 35px;
+  font-size: 16px;
+  padding: 0px;
+  transform: translate(100%);
+}
+
+/* Styling Form Daftar */
+
+@import "bourbon";
+
+body {
+  background: #eee !important;
+}
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signup {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#username {
+  margin-bottom: 10px;
+}
+
+#password {
+  margin-bottom: 10px;
+}
+
+.form-signup-heading,
+.checkbox {
+  margin-bottom: 20px;
+}
+
+.checkbox {
+  font-weight: normal;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#login {
+  margin-top: 10px;
+  font-size: small;
+}
+
+#btnDaftar {
+  border-radius: 50px;
+  width: 100px;
+  height: 35px;
+  font-size: 16px;
+  padding: 0px;
+  transform: translate(100%);
+}
+p #daftar {
+  text-align: center;
+}
+
+/* Styling Form Input */
+
+#heading-data-diri {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+#heading-medsos {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #000000;
+}
+
+#heading-histori {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  color: #000000;
+}
+
+.form-control {
+  height: 40px;
+  box-shadow: none;
+  color: #969fa4;
+}
+
+.form-control:focus {
+  border-color: #5cb85c;
+}
+
+.form-control,
+.btn {
+  border-radius: 3px;
+}
+
+.signup-form {
+  width: 800px;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-size: 15px;
+}
+
+.signup-form h2 {
+  color: #000000;
+  margin: 0 0 15px;
+  position: relative;
+  text-align: center;
+}
+
+.signup-form h2:before,
+.signup-form h2:after {
+  content: "";
+  height: 2px;
+  width: 30%;
+  background: #d4d4d4;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+
+.signup-form h2:before {
+  left: 0;
+}
+
+.signup-form h2:after {
+  right: 0;
+}
+
+.signup-form .hint-text {
+  color: #999;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.signup-form form {
+  color: #999;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  background: #f2f3f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signup-form input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+.signup-form .btn {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 140px;
+  outline: none !important;
+}
+
+.signup-form .row div:first-child {
+  padding-right: 10px;
+}
+
+.signup-form .row div:last-child {
+  padding-left: 10px;
+}
+
+.signup-form a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.signup-form a:hover {
+  text-decoration: none;
+}
+
+.signup-form form a {
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.signup-form form a:hover {
+  text-decoration: underline;
+}
+
+textarea {
+  width: 740px;
+  height: 200px;
+}
+
+.up-transkrip {
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+#up-transkrip {
+  color: #000000;
+}
+
+.form-group > * {
+  color: #000000;
+}
+
+#SimpanData {
+  color: #ffffff;
+  border-radius: 50px;
+  transform: translate(225%);
+  width: 100px;
+  height: 40px;
+  padding: 0px;
+}
+
+#txtarea-despencapaian {
+  height: 100px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+#txtarea-judulskripsi {
+  height: 75px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+#txtarea-abstrak {
+  text-indent: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+/* Styling Tabel Data Alumni */
+
+.table {
+  margin-bottom: 50px;
+}
+
+div .mt-4 {
+  background-color: #2c5cd6;
+  color: #ffffff;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-top: 5px;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.foto-profil {
+  width: 50px;
+}
+
+tr {
+  text-align: center;
+}
+
+.table > tbody > tr > * {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.d-flex {
+  width: 300px;
+  margin-top: 40px;
+}
+
+/* Styling Detail Alumni */
+
+.foto-alumni {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-bottom: 40px;
+}
+
+#detail-alumni ::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+#area-judul-skripsi {
+  height: 50px;
+  padding: 0.5rem;
+}
+
+#area-abstrak {
+  text-indent: 2rem;
+  text-align: justify;
+  padding: 0.5rem;
+}
+
+#area-pencapaian {
+  text-align: justify;
+  padding: 0.5rem;
+}
+
+.form-label-alumni {
+  color: #999;
+}
+
+/* ---------------------------- Styling Berita & Lowongan ---------------------------- */
+#head-card {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #204ab4;
+}
+
+#the-card {
+  max-width: 500px;
+  min-height: 320px;
+  max-height: 400px;
+}
+
+#img-card {
+  max-height: 180px;
+  min-height: 180px;
+}
+
+#title-card {
+  font-size: 18px;
+  color: #000000;
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  font-weight: 500;
+}
+
+#text-card {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+#tmb {
+  width: 200px;
+  transform: translate(225%);
+}
+
+/* ---------------------------- Styling Detail Berita & Lowongan ---------------------------- */
+#detail-berita-header {
+  font-size: x-large;
+}
+
+.img-detail-berita {
+  max-width: 30rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------------------------- Styling Input ---------------------------- */
+#btnSimpan {
+  border-radius: 50px;
+  width: 100px;
+  height: 35px;
+  font-size: 16px;
+  padding: 0px;
+}
