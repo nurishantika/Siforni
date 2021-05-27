@@ -3,10 +3,6 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-    <form class="d-flex">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
     <div class="row mt-3">
         <div class="col">
             <h1 class="heading-data-alumni">Data Alumni</h1>
