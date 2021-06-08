@@ -8,7 +8,7 @@
 
         <?= csrf_field(); ?>
 
-        <h2>Input Data Nilai Alumni</h2>
+        <h2>Input Data Alumni</h2>
 
         <p class="hint-text">Masukkan Data dengan Lengkap dan Valid</p>
 

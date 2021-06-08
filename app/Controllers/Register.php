@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\AlumniModel;
 use CodeIgniter\Controller;
 use App\Models\UserModel;
 

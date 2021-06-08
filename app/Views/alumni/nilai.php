@@ -3,15 +3,17 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-    <form class="d-flex">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
     <div class="row mt-3">
         <div class="col">
-            <h1 class="heading-data-alumni">Data Alumni</h1>
+            <h1 class="heading-data-alumni">Data Nilai Alumni</h1>
+            <!-- <form action="" method="post">
+                <div class="input-group mb-3">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </form> -->
             <table class="table table-striped">
-                <thead style="background-color: #102A6D; color:white">
+                <thead style="background-color: #2C5CD6; color:white">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Foto</th>

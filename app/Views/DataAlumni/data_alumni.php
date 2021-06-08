@@ -11,7 +11,7 @@
         <div class="col">
             <h1 class="mt-4">Data Alumni</h1>
             <table class="table table-striped">
-                <thead>
+                <thead style="background-color:#2C5CD6; color:white">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Foto</th>

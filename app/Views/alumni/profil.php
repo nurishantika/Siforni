@@ -50,7 +50,7 @@
                     <input type="text" class="form-control" name="notelp" placeholder="<?= $alumni['notelp']; ?>" disabled>
                 </div>
                 <div class="col">
-                    <label for="notelp_ortu" class="form-label-alumni">No. Telepon Orang Tuas</label>
+                    <label for="notelp_ortu" class="form-label-alumni">No. Telepon Orang Tua</label>
                     <input type="text" class="form-control" name="notelp_ortu" placeholder="<?= $alumni['notelp_ortu']; ?>" disabled>
                 </div>
             </div>
@@ -168,7 +168,7 @@
         </div>
 
         <div class="form-group">
-            <button id="SimpanData" class="btn btn-primary btn-lg">Edit</button>
+            <a href="/alumni/create/<?= $alumni['id']; ?>">Edit</a>
             <a href="#" id="SimpanData" class="btn btn-primary btn-lg">Nilai</a>
         </div>
     </form>

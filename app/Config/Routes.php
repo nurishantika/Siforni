@@ -50,6 +50,8 @@ $routes->get('/admin/data/data_alumni', 'alumni::alumni');
 
 $routes->get('/admin/data/create', 'alumni::nilai');
 
+$routes->get('/nilai/create/(:segment)', 'nilai::create/$1');
+
 $routes->delete('/alumni/(:num)', 'Alumni::delete/$1');
 
 $routes->get('/nilai/(:num)', 'Nilai::detail/$1');

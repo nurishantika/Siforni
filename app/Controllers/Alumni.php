@@ -6,6 +6,7 @@ use App\Models\AlumniModel;
 use App\Models\beritaModel;
 use App\Models\lokerModel;
 use App\Models\labModel;
+use App\Models\NilaiModel;
 use CodeIgniter\CodeIgniter;
 use Config\Exceptions;
 
@@ -15,21 +16,33 @@ class Alumni extends BaseController
     protected $beritaModel;
     protected $lokerModel;
     protected $labModel;
+    protected $NilaiModel;
     public function __construct()
     {
         $this->alumniModel = new AlumniModel();
         $this->beritaModel = new beritaModel();
         $this->lokerModel = new lokerModel();
         $this->labModel = new labModel();
+        $this->NilaiModel = new NilaiModel();
     }
 
     public function index()
     {
-        $alumni = $this->alumniModel->findAll();
+        $currentPage = $this->request->getVar('page_alumni') ? $this->request->getVar('page_alumni') : 1;
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $alumn = $this->alumniModel->search($keyword);
+        } else {
+            $alumn = $this->alumniModel;
+        }
 
         $data = [
             'title' => 'Data Alumni | Alumni SI UPNVJT',
-            'alumni' => $this->alumniModel->getAlumni()
+            'alumni' => $alumn->paginate(3, 'alumni'),
+            'pager' => $this->alumniModel->pager,
+            'currentPage' => $currentPage
+
         ];
 
         return view('data/data_alumni', $data);
@@ -47,11 +60,20 @@ class Alumni extends BaseController
 
     public function data()
     {
-        $alumni = $this->alumniModel->findAll();
+        $currentPage = $this->request->getVar('page_alumni') ? $this->request->getVar('page_alumni') : 1;
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $alumn = $this->alumniModel->search($keyword);
+        } else {
+            $alumn = $this->alumniModel;
+        }
 
         $data = [
             'title' => 'Data Alumni | Alumni SI UPNVJT',
-            'alumni' => $this->alumniModel->getAlumni()
+            'alumni' => $alumn->paginate(3, 'alumni'),
+            'pager' => $this->alumniModel->pager,
+            'currentPage' => $currentPage
         ];
 
         return view('alumni/data_alumni', $data);
@@ -177,16 +199,17 @@ class Alumni extends BaseController
     //     return view('admin/data/detail', $data);
     // }
 
-    public function create()
+    public function create($id)
     {
         // session();
         $data = [
             'title' => 'Input Data | Alumni SI UPNVJT',
+            'alumni' => $this->alumniModel->getAlumni($id),
             'validation' => \Config\Services::validation(),
             'lab' => $this->labModel->getlab()
         ];
 
-        return view('data/create', $data);
+        return view('alumni/create', $data);
     }
 
     // Input Data Alumni Dari Admin
@@ -200,7 +223,7 @@ class Alumni extends BaseController
         return view('admin/data/create', $data);
     }
 
-    public function save()
+    public function update($id)
     {
         //Validasi Input
 

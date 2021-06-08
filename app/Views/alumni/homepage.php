@@ -32,7 +32,7 @@
 </div>
 
 <!-- Section Berita Alumni -->
-<div class="container">
+<!-- <div class="container">
     <h1 id="header-berita">BERITA ALUMNI TERKINI</h1>
     <div class="box1">
         <div class="card" style="width: 18rem;">
@@ -61,12 +61,12 @@
     <div class="col-md-12 text-center">
         <a id="btnSelengkapnya1" type="button" class="btn btn-primary" href="/alumni/berita">Selengkapnya</a>
     </div>
-</div>
+</div> -->
 
-<hr width="1000" color="lightgrey">
+<!-- <hr width="1000" color="lightgrey"> -->
 <!-- Section Lowongan Pekerjaan -->
 
-<h1 id="header-lowongan">LOWONGAN PEKERJAAN</h1>
+<!-- <h1 id="header-lowongan">LOWONGAN PEKERJAAN</h1>
 <div class="card1">
     <div class="card" style="width: 18rem;">
         <img src="/img/cready.png" class="card-img-top" alt="...">
@@ -94,5 +94,5 @@
 <div class="col-md-12 text-center">
     <a id="btnSelengkapnya2" type="button" class="btn btn-primary" href="/alumni/lowongan">Selengkapnya</a>
 </div>
-</div>
+</div> -->
 <?= $this->endSection(); ?>

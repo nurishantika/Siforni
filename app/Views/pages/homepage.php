@@ -34,15 +34,23 @@
 <!-- Section Berita Alumni -->
 <div class="container">
     <h1 id="header-berita">BERITA ALUMNI TERKINI</h1>
-    <div class="box1">
-        <div class="card" style="width: 18rem;">
-            <img src="/img/cready.png" class="card-img-top" alt="box1">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <!-- <div class="box1"> -->
+    <!-- <div class="card" style="width: 18rem;"> -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach ($berita as $b) : ?>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card mb-3" id="the-card">
+                    <img src="/img/<?= $b['foto_berita']; ?>" class="card-img-top" id="img-card">
+                    <div class="card-body">
+                        <a class="card-title" id="title-card" href="/berita/<?= $b['kode_berita']; ?>"><?= $b['judul_berita']; ?></a>
+                        <p class="card-text" id="text-card"> <?= $b['created_at']; ?></p>
+                    </div>
+                </div>
             </div>
-        </div>
+        <?php endforeach; ?>
     </div>
-    <div class="box2">
+    <!-- </div> -->
+    <!-- <div class="box2">
         <div class="card" style="width: 18rem;">
             <img src="/img/cready.png" class="card-img-top" alt="box1">
             <div class="card-body">
@@ -57,7 +65,7 @@
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="col-md-12 text-center">
         <a id="btnSelengkapnya1" type="button" class="btn btn-primary" href="/berita">Selengkapnya</a>
     </div>
@@ -65,17 +73,23 @@
 
 <hr width="1000" color="lightgrey">
 <!-- Section Lowongan Pekerjaan -->
-
-<h1 id="header-lowongan">LOWONGAN PEKERJAAN</h1>
-<div class="card1">
-    <div class="card" style="width: 18rem;">
-        <img src="/img/cready.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
+<div class="container">
+    <h1 id="header-lowongan">LOWONGAN PEKERJAAN</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach ($lokerModel as $l) : ?>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card mb-3" id="the-card">
+                    <img src="/img/<?= $l['foto_loker']; ?>" class="card-img-top" id="img-card">
+                    <div class="card-body">
+                        <a class="card-title" id="title-card" href="/lowongan/<?= $l['kode_loker']; ?>"><?= $l['judul_loker']; ?></a>
+                        <p class="card-text" id="text-card"> <?= $l['created_at']; ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
-<div class="card2">
+<!-- <div class="card2">
     <div class="card" style="width: 18rem;">
         <img src="/img/cready.png" class="card-img-top" alt="...">
         <div class="card-body">
@@ -90,7 +104,7 @@
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
     </div>
-</div>
+</div> -->
 <div class="col-md-12 text-center">
     <a id="btnSelengkapnya2" type="button" class="btn btn-primary" href="/lowongan">Selengkapnya</a>
 </div>

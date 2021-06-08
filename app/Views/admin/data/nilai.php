@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col">
-            <h1 class="heading-data-alumni">Data Alumni</h1>
+            <h1 class="heading-data-alumni">Data Nilai Alumni</h1>
             <table class="table table-striped">
                 <thead style="background-color: #102A6D; color:white">
                     <tr>
