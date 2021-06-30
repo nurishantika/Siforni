@@ -22,7 +22,9 @@ class Admin extends BaseController
     {
         $data = [
             'title' => 'Home | Alumni SI UPNVJT',
-            'grafik' => $this->GrafikModel->grafik()
+            'grafik1' => $this->GrafikModel->grafik1(),
+            'grafik2' => $this->GrafikModel->grafik2(),
+            'grafik3' => $this->GrafikModel->grafik3()
         ];
         // dd($data);
         echo view('admin/pages/homepage', $data);

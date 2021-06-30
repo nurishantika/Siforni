@@ -9,16 +9,46 @@ class GrafikModel extends Model
     protected $table = 'alumni';
     protected $primaryKey = 'id';
 
-    public function grafik()
+    public function grafik1()
     {
-        $grafiklulus = $this->db->query("SELECT (thlulus - thmasuk) as total from alumni");
 
-        $hasil = [];
-        if (!empty($grafiklulus)) {
-            foreach ($grafiklulus->getResultArray() as $key) {
-                $hasil[] = $key;
+        $grafiklulus1 = $this->db->query("SELECT COUNT(npm) as total, thmasuk 
+        FROM alumni WHERE jumlah_sks = 144 GROUP BY thmasuk");
+
+        $hasil1 = [];
+        if (!empty($grafiklulus1)) {
+            foreach ($grafiklulus1->getResultArray() as $key1) {
+                $hasil1[] = $key1;
             }
         }
-        return $hasil;
+        return $hasil1;
+    }
+
+    public function grafik2()
+    {
+        $grafiklulus2 = $this->db->query("SELECT COUNT(npm) as total, thmasuk 
+        FROM alumni WHERE jumlah_sks = 145 GROUP BY thmasuk");
+
+        $hasil2 = [];
+        if (!empty($grafiklulus2)) {
+            foreach ($grafiklulus2->getResultArray() as $key2) {
+                $hasil2[] = $key2;
+            }
+        }
+        return $hasil2;
+    }
+
+    public function grafik3()
+    {
+        $grafiklulus3 = $this->db->query("SELECT COUNT(npm) as total, thmasuk 
+        FROM alumni WHERE jumlah_sks = 146 GROUP BY thmasuk");
+
+        $hasil3 = [];
+        if (!empty($grafiklulus3)) {
+            foreach ($grafiklulus3->getResultArray() as $key3) {
+                $hasil3[] = $key3;
+            }
+        }
+        return $hasil3;
     }
 }
