@@ -199,17 +199,17 @@ class Alumni extends BaseController
     //     return view('admin/data/detail', $data);
     // }
 
-    public function create($id)
+    public function create()
     {
         // session();
         $data = [
             'title' => 'Input Data | Alumni SI UPNVJT',
-            'alumni' => $this->alumniModel->getAlumni($id),
+            'alumni' => $this->alumniModel->getAlumni(),
             'validation' => \Config\Services::validation(),
             'lab' => $this->labModel->getlab()
         ];
 
-        return view('alumni/create', $data);
+        return view('/data/create', $data);
     }
 
     // Input Data Alumni Dari Admin
@@ -223,7 +223,7 @@ class Alumni extends BaseController
         return view('admin/data/create', $data);
     }
 
-    public function update($id)
+    public function save($id)
     {
         //Validasi Input
 

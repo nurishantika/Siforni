@@ -44,6 +44,30 @@ class Nilai extends BaseController
         return view('admin/data/nilai', $data);
     }
 
+    public function nilai()
+    {
+        $nilai = $this->NilaiModel->findAll();
+        $alumni = $this->AlumniModel->findAll();
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $nil = $this->NilaiModel->search($keyword);
+        } else {
+            $nil = $this->NilaiModel;
+        }
+
+        // d($this->request->getVar('keyword'));
+
+        $data = [
+            'title' => 'Data Nilai Alumni | Alumni SI UPNVJT',
+            'nilai' => $nil->getNilai(),
+            'alumni' => $alumni
+        ];
+
+        // dd($data);
+        return view('alumni/nilai', $data);
+    }
+
     public function detail($id_nilai)
     {
 
@@ -60,6 +84,24 @@ class Nilai extends BaseController
         }
 
         return view('admin/data/details', $data);
+    }
+
+    public function details($id_nilai)
+    {
+
+        $data = [
+            'title' => 'Data Nilai Alumni | Alumni SI UPNVJT',
+        ];
+        $nilai = $this->NilaiModel->getNilai($id_nilai);
+
+        if (isset($nilai[0])) {
+            $data['nilai'] = $nilai[0];
+        } else {
+            // TODO : Kondisi ketika data tidak lengkap
+            dd("Data tidak lengkap");
+        }
+
+        return view('alumni/details', $data);
     }
 
     public function create($id_nilai)

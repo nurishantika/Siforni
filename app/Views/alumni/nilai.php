@@ -33,7 +33,7 @@
                             <td><?= $n['nama']; ?></td>
                             <td><?= $n['thlulus']; ?></td>
                             <td>
-                                <a href="/nilai/<?= $n['id_nilai']; ?>" class="btn btn-success">Nilai</a>
+                                <a href="/nilai/details/<?= $n['id_nilai']; ?>" class="btn btn-success">Nilai</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

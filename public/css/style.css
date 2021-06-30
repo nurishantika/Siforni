@@ -625,3 +625,8 @@ tr {
   font-size: 16px;
   padding: 0px;
 }
+
+.signup-form.form-group.row {
+  margin-left: 100px;
+  margin-right: 100px;
+}
