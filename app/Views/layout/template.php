@@ -10,9 +10,10 @@
 
     <!-- Bootstrap CSS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity=" sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity=" sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
     <link rel=" stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
     <title><?= $title; ?></title>
 </head>
 
@@ -106,6 +107,41 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function previewImg() {
+            const fotoAlumni = document.querySelector('#fotoalumni');
+            const fotoLabel = document.querySelector('.custom-file-label');
+            const fotoPreview = document.querySelector('.img-preview');
+
+            fotoLabel.textContent = fotoalumni.files[0].name;
+
+            const fileFoto = new FileReader();
+            fileFoto.readAsDataURL(fotoalumni.files[0]);
+
+            fileFoto.onload = function(e) {
+                fotoPreview.src = e.target.result;
+            }
+        }
+    </script>
+
+    <script>
+        function previewTranskrip() {
+            const transkripAlumni = document.querySelector('#transkrip');
+            const transkripLabel = document.querySelector('.transkrip');
+            // const transkripPreview = document.querySelector('.img-preview');
+
+            transkripLabel.textContent = transkrip.files[0].name;
+
+            const fileTranskrip = new FileReader();
+            fileTranskrip.readAsDataURL(transkrip.files[0]);
+
+            // fileTranskrip.onload = function(e) {
+            //     transkripPreview.src = e.target.result;
+            // }
+        }
+    </script>
+
 </body>
 
 </html>

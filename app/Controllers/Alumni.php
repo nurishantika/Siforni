@@ -7,6 +7,7 @@ use App\Models\beritaModel;
 use App\Models\lokerModel;
 use App\Models\labModel;
 use App\Models\NilaiModel;
+use App\Models\SemesterModel;
 use CodeIgniter\CodeIgniter;
 use Config\Exceptions;
 
@@ -17,6 +18,7 @@ class Alumni extends BaseController
     protected $lokerModel;
     protected $labModel;
     protected $NilaiModel;
+    protected $SemesterModel;
     public function __construct()
     {
         $this->alumniModel = new AlumniModel();
@@ -24,6 +26,7 @@ class Alumni extends BaseController
         $this->lokerModel = new lokerModel();
         $this->labModel = new labModel();
         $this->NilaiModel = new NilaiModel();
+        $this->SemesterModel = new SemesterModel();
     }
 
     public function index()
@@ -206,10 +209,11 @@ class Alumni extends BaseController
             'title' => 'Input Data | Alumni SI UPNVJT',
             'alumni' => $this->alumniModel->getAlumni(),
             'validation' => \Config\Services::validation(),
-            'lab' => $this->labModel->getlab()
+            'lab' => $this->labModel->getlab(),
+            'semester' => $this->SemesterModel->getSemester()
         ];
 
-        return view('/data/create', $data);
+        return view('/alumni/create', $data);
     }
 
     // Input Data Alumni Dari Admin
@@ -223,7 +227,7 @@ class Alumni extends BaseController
         return view('admin/data/create', $data);
     }
 
-    public function save($id)
+    public function save()
     {
         //Validasi Input
 
@@ -241,7 +245,6 @@ class Alumni extends BaseController
                 'errors' => [
                     'required' => 'Nama wajib diisi!',
                     'alpha_numeric_punct' => 'Nama yang anda isikan mengandung karakter yang tidak diperbolehkan!'
-
                 ]
             ],
             'thmasuk' => [
@@ -320,14 +323,12 @@ class Alumni extends BaseController
                 'rules' => 'min_length[thbekerja,4]',
                 'errors' => [
                     'min_length' => 'Minimal 4 Karakter!'
-
                 ]
             ],
-            'thkeluar' => [
-                'rules' => 'min_length[thkeluar,4]',
+            'perusahaan' => [
+                'rules' => 'min_length[perusahaan,2]',
                 'errors' => [
-                    'min_length' => 'Minimal 4 Karakter!'
-
+                    'min_length' => 'Minimal 2 Karakter!'
                 ]
             ],
             'ipk' => [
@@ -337,37 +338,42 @@ class Alumni extends BaseController
                     'numeric' => 'IPK hanya mengandung angka dan koma!',
                     'min_length' => 'Minimal 4 Karakter!',
                     'decimal' => 'Contoh "3.85"'
-
+                ]
+            ],
+            'semester' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Semester wajib diisi!'
                 ]
             ],
             'judulskripsi' => [
                 'rules' => 'required|alpha_numeric_punct',
                 'errors' => [
                     'required' => 'Judul skripsi wajib diisi!',
-                    'alpha_numeric_punct' => 'Judul skripsi hanya boleh berisi huruf dan angka serta tanda baca tertentu!',
+                    'alpha_numeric_punct' => 'Judul skripsi hanya boleh berisi huruf dan angka serta tanda baca tertentu!'
                 ]
             ],
             'abstrak' => [
-                'rules' => 'required|alpha_numeric_punct',
+                'rules' => 'required',
                 'errors' => [
-                    'required' => 'Abstrak skripsi wajib diisi!',
-                    'alpha_numeric_punct' => 'Abstrak skripsi hanya boleh berisi huruf dan angka serta tanda baca tertentu!',
+                    'required' => 'Abstrak skripsi wajib diisi!'
                 ]
             ],
             'fotoalumni' => [
                 'rules' => 'uploaded[fotoalumni]|max_size[fotoalumni,5000]|is_image[fotoalumni]|mime_in[fotoalumni,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'uploaded' => 'Foto wajib diisi!',
+                    'uploaded' => 'Foto wajib diupload!',
                     'max_size' => 'Ukuran foto maksimal 5MB!',
                     'is_image' => 'Yang anda pilih bukan gambar!',
                     'mime_in' => 'Yang anda pilih bukan gambar!'
                 ]
             ],
             'transkrip' => [
-                'rules' => 'uploaded[transkrip]|max_size[transkrip,5000]',
+                'rules' => 'uploaded[transkrip]|max_size[transkrip,5000]|ext_in[transkrip,pdf]',
                 'errors' => [
-                    'uploaded' => 'Foto wajib diisi!',
-                    'max_size' => 'Ukuran foto maksimal 5MB!'
+                    'uploaded' => 'Transkrip wajib diupload!',
+                    'max_size' => 'Ukuran file maksimal 5MB!',
+                    'ext_in' => 'Yang anda pilih bukan PDF!'
                 ]
             ]
         ])) {
@@ -379,11 +385,25 @@ class Alumni extends BaseController
         // ambil gambar
         $fotoAlumni = $this->request->getFile('fotoalumni');
 
-        //pindahkan file ke folder img
-        $fotoAlumni->move('img');
+        // apakah tidak ada gambar yang diupload
+        if ($fotoAlumni->getError() == 4) {
+            $namaFoto = 'default.jpg';
+        } else {
+            // generate nama foto random
+            $namaFoto = $fotoAlumni->getRandomName();
 
-        // ambil nama file
-        $namaFoto = $fotoAlumni->getName();
+            //pindahkan file ke folder img
+            $fotoAlumni->move('img', $namaFoto);
+        }
+
+        // ambil file transkrip
+        $transkripAlumni = $this->request->getFile('transkrip');
+
+        // generate nama transkrip random
+        $namaTranskrip = $transkripAlumni->getRandomName();
+
+        //pindahkan file ke folder transkrip
+        $transkripAlumni->move('pdf', $namaTranskrip);
 
         $this->alumniModel->save([
             'npm' => $this->request->getVar('npm'),
@@ -397,21 +417,23 @@ class Alumni extends BaseController
             'email' => $this->request->getVar('email'),
             'email_cadangan' => $this->request->getVar('email_cadangan'),
             'thbekerja' => $this->request->getVar('thbekerja'),
-            'thkeluar' => $this->request->getVar('thkeluar'),
+            // 'thbekerja2' => $this->request->getVar('thbekerja2'),
             'perusahaan' => $this->request->getVar('perusahaan'),
+            // 'perusahaan2' => $this->request->getVar('perusahaan2'),
             'fotoalumni' => $namaFoto,
             'facebook' => $this->request->getVar('facebook'),
             'instagram' => $this->request->getVar('instagram'),
             'linkedin' => $this->request->getVar('linkedin'),
             'twitter' => $this->request->getVar('twitter'),
             'ipk' => $this->request->getVar('ipk'),
+            'semester' => $this->request->getVar('semester'),
             'judulskripsi' => $this->request->getVar('judulskripsi'),
             'bidangminat' => $this->request->getVar('bidangminat'),
             'abstrak' => $this->request->getVar('abstrak'),
             'pencapaian' => $this->request->getVar('pencapaian'),
             'thpencapaian' => $this->request->getVar('thpencapaian'),
             'despencapaian' => $this->request->getVar('despencapaian'),
-            'transkrip' => $this->request->getVar('transkrip')
+            'transkrip' => $namaTranskrip
         ]);
 
         // echo $this->alumniModel->errors();

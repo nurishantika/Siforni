@@ -9,7 +9,7 @@ class AlumniModel extends Model
     protected $table = 'alumni';
     protected $primaryKey = 'id';
     protected $useTimestamps = true;
-    protected $allowedFields = ['npm', 'nama', 'thmasuk', 'thlulus', 'alamat', 'notelp', 'notelp_ortu', 'noijazah', 'email', 'email_cadangan', 'thbekerja', 'perusahaan', 'fotoalumni', 'facebook', 'instagram', 'linkedin', 'twitter', 'ipk', 'judulskripsi', 'bidangminat', 'abstrak', 'pencapaian', 'thpencapaian', 'despencapaian', 'transkrip'];
+    protected $allowedFields = ['npm', 'nama', 'thmasuk', 'thlulus', 'alamat', 'notelp', 'notelp_ortu', 'noijazah', 'email', 'email_cadangan', 'thbekerja', 'thbekerja2', 'perusahaan', 'perusahaan2', 'fotoalumni', 'facebook', 'instagram', 'linkedin', 'twitter', 'ipk', 'semester', 'judulskripsi', 'bidangminat', 'abstrak', 'pencapaian', 'thpencapaian', 'despencapaian', 'transkrip'];
 
     public function getAlumni($id = false)
     {

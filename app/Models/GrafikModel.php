@@ -13,7 +13,7 @@ class GrafikModel extends Model
     {
 
         $grafiklulus1 = $this->db->query("SELECT COUNT(npm) as total, thmasuk 
-        FROM alumni WHERE jumlah_sks = 144 GROUP BY thmasuk");
+        FROM alumni WHERE jumlah_semester = '7 Semester' GROUP BY thmasuk");
 
         $hasil1 = [];
         if (!empty($grafiklulus1)) {
@@ -27,7 +27,7 @@ class GrafikModel extends Model
     public function grafik2()
     {
         $grafiklulus2 = $this->db->query("SELECT COUNT(npm) as total, thmasuk 
-        FROM alumni WHERE jumlah_sks = 145 GROUP BY thmasuk");
+        FROM alumni WHERE jumlah_semester = '8 Semester' GROUP BY thmasuk");
 
         $hasil2 = [];
         if (!empty($grafiklulus2)) {
@@ -41,7 +41,7 @@ class GrafikModel extends Model
     public function grafik3()
     {
         $grafiklulus3 = $this->db->query("SELECT COUNT(npm) as total, thmasuk 
-        FROM alumni WHERE jumlah_sks = 146 GROUP BY thmasuk");
+        FROM alumni WHERE jumlah_semester = 'Lebih dari 8 Semester' GROUP BY thmasuk");
 
         $hasil3 = [];
         if (!empty($grafiklulus3)) {
