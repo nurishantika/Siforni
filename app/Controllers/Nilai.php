@@ -22,8 +22,7 @@ class Nilai extends BaseController
 
     public function index()
     {
-        $nilai = $this->NilaiModel->findAll();
-        $alumni = $this->AlumniModel->findAll();
+        $currentPage = $this->request->getVar('page_nilai') ? $this->request->getVar('page_nilai') : 1;
 
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
@@ -36,8 +35,9 @@ class Nilai extends BaseController
 
         $data = [
             'title' => 'Data Nilai Alumni | Alumni SI UPNVJT',
-            'nilai' => $nil->getNilai(),
-            'alumni' => $alumni
+            'nilai' => $nil->join('alumni', 'alumni.id = nilai.id_alumni')->paginate(5, 'nilai'),
+            'pager' => $this->NilaiModel->pager,
+            'currentPage' => $currentPage
         ];
 
         // dd($data);
@@ -46,8 +46,7 @@ class Nilai extends BaseController
 
     public function nilai()
     {
-        $nilai = $this->NilaiModel->findAll();
-        $alumni = $this->AlumniModel->findAll();
+        $currentPage = $this->request->getVar('page_nilai') ? $this->request->getVar('page_nilai') : 1;
 
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
@@ -60,8 +59,9 @@ class Nilai extends BaseController
 
         $data = [
             'title' => 'Data Nilai Alumni | Alumni SI UPNVJT',
-            'nilai' => $nil->getNilai(),
-            'alumni' => $alumni
+            'nilai' => $nil->join('alumni', 'alumni.id = nilai.id_alumni')->paginate(5, 'nilai'),
+            'pager' => $this->NilaiModel->pager,
+            'currentPage' => $currentPage
         ];
 
         // dd($data);

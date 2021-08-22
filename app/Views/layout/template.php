@@ -38,7 +38,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/pages/login">Login Alumni</a></li>
                             <li><a class="dropdown-item" href="/masuk">Login Admin</a></li>
-                            <li><a class="dropdown-item" href="/pages/daftar">Registrasi Alumni</a></li>
+                            <li><a class="dropdown-item" href="/alumni/create">Registrasi Alumni</a></li>
                             <li><a class="dropdown-item" href="/alumni">Data Alumni</a></li>
                         </ul>
                     </li>

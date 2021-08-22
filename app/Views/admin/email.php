@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 <div class="container my-5">
-    <h4>Form Kirim Email</h4>
+    <div class="card-header text-white" id="detail-header-admin-create" style="background-color: #102A6D;">Form Kirim Email</div>
     <hr>
     <?php
     if (!empty(session()->getFlashdata('success'))) { ?>
@@ -44,7 +44,7 @@
         ?>
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary" style="color: white;">Kirim</button>
+        <button type="submit" class="btn btn-success" style="color: white">Kirim</button>
     </div>
     </form>
 </div>

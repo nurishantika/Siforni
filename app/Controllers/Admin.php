@@ -5,17 +5,24 @@ namespace App\Controllers;
 use App\Models\nilaiModel;
 use App\Models\GrafikModel;
 use App\Models\AlumniModel;
+use App\Models\PekerjaanModel;
+use App\Models\PencapaianModel;
 use CodeIgniter\CodeIgniter;
 use Config\Exceptions;
 
 class Admin extends BaseController
 {
+    protected $AlumniModel;
     protected $nilaiModel;
+    protected $PekerjaanModel;
+    protected $PencapaianModel;
     public function __construct()
     {
         $this->nilaiModel = new nilaiModel();
         $this->GrafikModel = new GrafikModel();
         $this->AlumniModel = new AlumniModel();
+        $this->PekerjaanModel = new PekerjaanModel();
+        $this->PencapaianModel = new PencapaianModel();
     }
 
     public function index()
@@ -74,7 +81,7 @@ class Admin extends BaseController
         $data = [
             'title' => 'Data Alumni | Alumni SI UPNVJT',
             // 'alumni' => $this->alumniModel->getAlumni(),
-            'alumni' => $alumn->paginate(3, 'alumni'),
+            'alumni' => $alumn->paginate(5, 'alumni'),
             'pager' => $this->AlumniModel->pager,
             'currentPage' => $currentPage
         ];
@@ -87,9 +94,10 @@ class Admin extends BaseController
     {
         $data = [
             'title' => 'Detail Alumni | Alumni SI UPNVJT',
-            'alumni' => $this->AlumniModel->getAlumni($id)
+            'alumni' => $this->AlumniModel->getAlumni($id),
+            'pekerjaan' => $this->PekerjaanModel->getPekerjaan($id),
+            'pencapaian' => $this->PencapaianModel->getPencapaian($id),
         ];
-
 
         // jika data tidak ada di tabel
         if (empty($data['alumni'])) {

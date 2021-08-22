@@ -4343,7 +4343,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #4e73df;
+  background-color: #102a6d;
 }
 
 .nav-fill > .nav-link,
@@ -11803,8 +11803,8 @@ tr {
   transform: translate(225%);
 }
 
-/* ---------------------------- Styling Detail Berita & Lowongan ---------------------------- */
-#detail-berita-header {
+/* ---------------------------- Styling Header Detail Berita, Lowongan & Laboratorium ---------------------------- */
+#detail-header-admin-create {
   font-size: x-large;
 }
 
@@ -11822,4 +11822,73 @@ tr {
   height: 35px;
   font-size: 16px;
   padding: 0px;
+}
+
+/* ---------------------------- Styling Input ---------------------------- */
+.foto-alumni {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-bottom: 40px;
+}
+
+#heading-data-diri {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+#heading-medsos {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 70px;
+  color: #000000;
+}
+
+#heading-kuliah {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 70px;
+  color: #000000;
+}
+
+#heading-pekerjaan {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #000000;
+}
+
+#heading-penghargaan {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #000000;
+}
+
+#area-judul-skripsi {
+  height: 50px;
+  padding: 0.5rem;
+}
+
+#area-abstrak {
+  text-indent: 2rem;
+  text-align: justify;
+  padding: 0.5rem;
+}
+
+#area-pencapaian {
+  text-align: justify;
+  padding: 0.5rem;
+}
+
+#SimpanData {
+  color: #ffffff;
+  border-radius: 50px;
+  /* transform: translate(225%); */
+  width: 100px;
+  height: 40px;
+  padding: 0px;
+  margin-top: 1rem;
 }

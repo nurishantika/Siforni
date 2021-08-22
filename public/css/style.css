@@ -326,6 +326,13 @@ p #daftar {
 
 /* Styling Form Input */
 
+#heading-daftar-akun {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #000000;
+}
+
 #heading-data-diri {
   text-align: center;
   margin-bottom: 20px;
@@ -335,7 +342,7 @@ p #daftar {
 #heading-medsos {
   text-align: center;
   margin-bottom: 20px;
-  margin-top: -70px;
+  margin-top: 70px;
   color: #000000;
 }
 
@@ -489,7 +496,7 @@ textarea {
   width: 100px;
   height: 40px;
   padding: 0px;
-  margin-top: -30rem;
+  margin-top: 5rem;
 }
 
 #txtarea-despencapaian {
@@ -504,6 +511,13 @@ textarea {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.5rem;
+}
+
+#detail-admin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #txtarea-abstrak {

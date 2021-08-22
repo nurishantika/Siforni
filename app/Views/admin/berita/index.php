@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col">
-            <h1 id="head-card"> BERITA ALUMNI TERKINI </h1>
+            <h1 id="head-card" style="color: #102A6D;"> BERITA ALUMNI TERKINI </h1>
             <?php if (session()->getFlashData('pesan')) : ?>
                 <div class="alert alert-success" role="alert">
                     <?= session()->getFlashData('pesan'); ?>

@@ -5,7 +5,9 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col">
-            <h1 class="heading-data-alumni">Data Nilai Alumni</h1>
+            <center>
+                <h1 class="heading-data-alumni" style="color: black;">Data Nilai Alumni</h1>
+            </center>
             <table class="table table-striped">
                 <thead style="background-color: #102A6D; color:white">
                     <tr>
@@ -17,7 +19,7 @@
                         <th scope="col">Nilai</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="color: black;">
                     <?php $i = 1; ?>
                     <?php foreach ($nilai as $n) : ?>
                         <tr>
@@ -33,6 +35,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <?= $pager->links('nilai', 'pagination'); ?>
         </div>
     </div>
 </div>

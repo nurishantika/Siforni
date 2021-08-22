@@ -31,7 +31,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #102A6D;" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
@@ -235,8 +235,8 @@
                     </div>
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="/masuk/logout">Logout</a>
+                        <button class="btn" style="color: white; background-color: #102A6D;" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-danger" href="/masuk/logout">Logout</a>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col">
                 <div class="card mb-3 mx-auto" style="max-width: 50rem;">
-                    <div class="card-header text-white" id="detail-berita-header" style="background-color: #4e73df;">Input Lowongan</div>
+                    <div class="card-header text-white" id="detail-header-admin-create" style="background-color: #102A6D;">Input Lowongan</div>
                     <div class="card-body bg-light text-dark">
 
                         <?php if (!empty(session()->getFlashdata('error'))) : ?>

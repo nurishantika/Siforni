@@ -18,7 +18,9 @@
                             <p class="card-text ml-5 mr-5 mb-5" style="margin-top: 30px;"><?= nl2br(stripslashes($berita['isi_berita'])); ?></p>
                         </div>
                     </div>
-                    <a class="btn btn-danger btn-lg" style="color: white;" href="#" data-toggle="modal" data-target="#hapusModal"> Hapus </a>
+                    <center>
+                        <a class="btn btn-danger btn-lg" style="color: white;" href="#" data-toggle="modal" data-target="#hapusModal"> Hapus </a>
+                    </center>
                 </div>
             </div>
         </div>

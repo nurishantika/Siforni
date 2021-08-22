@@ -7,7 +7,9 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col">
-                <h1 class="heading-data-alumni">Data Alumni</h1>
+                <center>
+                    <h1 class="heading-data-alumni">Data Alumni</h1>
+                </center>
                 <form action="" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Search" name="keyword">
@@ -40,7 +42,7 @@
                                 <td><?= $alum['thlulus']; ?></td>
                                 <td>
                                     <!-- Menampilkan data alumni dari tabel alumni dengan id -->
-                                    <a href="/alumni/<?= $alum['id']; ?>" class="btn btn-success">Detail</a>
+                                    <a href="/alumni/detail/<?= $alum['id']; ?>" class="btn btn-success">Detail</a>
                                 </td>
 
                             </tr>
