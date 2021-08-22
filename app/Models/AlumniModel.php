@@ -24,4 +24,23 @@ class AlumniModel extends Model
     {
         return $this->table('alumni')->like('nama', $keyword)->orLike('thmasuk', $keyword)->orLike('thlulus', $keyword);
     }
+
+    public function getDetail($id = null)
+    {
+        $this->join('pekerjaan', 'alumni.id = pekerjaan.id_alumni', 'LEFT');
+        if ($id != null) {
+            $this->where(['id' => $id]);
+        }
+        $result = $this->findAll();
+        return $result;
+    }
+
+    public function getAlumniDetail($id)
+    {
+        return $this->db->table($this->table)
+            ->join('pekerjaan', 'pekerjaan.id_alumni = alumni.id', 'RIGHT')
+            ->join('pencapaian', 'pencapaian.id_alumni = alumni.id', 'RIGHT')
+            ->where(['alumni.id', $id])
+            ->get()->getResultArray();
+    }
 }

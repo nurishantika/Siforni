@@ -2,135 +2,146 @@
 
 <?= $this->section('content'); ?>
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
+<center>
+    <div id="detail-alumni" class="signup-form" style="margin:auto; color:black;">
+        <div class="col-md-9" id="detail-admin">
+            <form action="/admin/alumni">
 
-    <div id="detail-alumni" class="signup-form">
-        <form action="/admin/alumni/<?= $alumni['id']; ?>" method="POST">
-            <?= csrf_field(); ?>
+                <h2 id="head-card" style="color: #102A6D;">Data Alumni</h2>
 
-            <h2>Data Alumni</h2>
+                <img class="foto-alumni" src="/img/<?= $alumni['fotoalumni']; ?>">
 
-            <img class="foto-alumni" src="/img/<?= $alumni['fotoalumni']; ?>">
+                <h4 id="heading-data-diri">Data Diri Alumni</h4>
 
-            <h4 id="heading-data-diri">Data Diri Alumni</h4>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">NPM</label>
-                        <label type="text" class="form-control" name="npm" required="required" disabled><?= $alumni['npm']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Nama Lengkap</label>
-                        <label type="text" class="form-control" name="nama_lengkap" required="required" disabled><?= $alumni['nama']; ?></label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">NPM</label>
+                            <input type="text" class="form-control" name="npm" placeholder="<?= $alumni['npm']; ?>" required="required" disabled>
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Nama Lengkap</label>
+                            <input type="text" class="form-control" name="nama_lengkap" placeholder="<?= $alumni['nama']; ?>" required="required" disabled>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Tahun Masuk</label>
-                        <label type="text" class="form-control" name="tahun_masuk" required="required" disabled><?= $alumni['thmasuk']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Tahun Lulus</label>
-                        <label type="text" class="form-control" name="tahun_lulus" required="required" disabled><?= $alumni['thlulus']; ?></label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Alamat</label>
-                        <label type="text" class="form-control" name="alamat" disabled><?= $alumni['alamat']; ?></label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Tahun Masuk</label>
+                            <input type="text" class="form-control" name="tahun_masuk" placeholder="<?= $alumni['thmasuk']; ?>" required="required" disabled>
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Tahun Lulus</label>
+                            <input type="text" class="form-control" name="tahun_lulus" placeholder="<?= $alumni['thlulus']; ?>" required="required" disabled>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="notelp" class="form-label-alumni">No. Telepon</label>
-                        <label type="text" class="form-control" name="notelp" disabled><?= $alumni['notelp']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="notelp_ortu" class="form-label-alumni">No. Telepon Orang Tuas</label>
-                        <label type="text" class="form-control" name="notelp_ortu" disabled><?= $alumni['notelp_ortu']; ?></label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Alamat</label>
+                            <input type="text" class="form-control" name="alamat" placeholder="<?= $alumni['alamat']; ?>" disabled>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">No. Ijazah</label>
-                        <label type="text" class="form-control" name="no_ijazah" required="required" disabled><?= $alumni['noijazah']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Email</label>
-                        <label type="email" class="form-control" name="email" required="required" disabled><?= $alumni['email']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="email_cadangan" class="form-label-alumni">Email</label>
-                        <label type="email" class="form-control" name="email_cadangan" required="required" disabled><?= $alumni['email_cadangan']; ?></label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="notelp" class="form-label-alumni">No. Telepon</label>
+                            <input type="text" class="form-control" name="notelp" placeholder="<?= $alumni['notelp']; ?>" disabled>
+                        </div>
+                        <div class="col">
+                            <label for="notelp_ortu" class="form-label-alumni">No. Telepon Orang Tuas</label>
+                            <input type="text" class="form-control" name="notelp_ortu" placeholder="<?= $alumni['notelp_ortu']; ?>" disabled>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Tahun Bekerja</label>
-                        <label type="text" class="form-control" name="tahun_bekerja" required="required" disabled><?= $alumni['thbekerja']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Perusahaan Tempat Bekerja</label>
-                        <label type="text" class="form-control" name="nama_perusahaan" required="required" disabled><?= $alumni['perusahaan']; ?></label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">No. Ijazah</label>
+                            <input type="text" class="form-control" name="no_ijazah" placeholder="<?= $alumni['noijazah']; ?>" required="required" disabled>
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="<?= $alumni['email']; ?>" required="required" disabled>
+                        </div>
+                        <div class="col">
+                            <label for="email_cadangan" class="form-label-alumni">Email</label>
+                            <input type="email" class="form-control" name="email_cadangan" placeholder="<?= $alumni['email_cadangan']; ?>" required="required" disabled>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-striped">
+                                <thead style="background-color: #102A6D; color:white">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Periode Bekerja</th>
+                                        <th scope="col">Perusahaan</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="color: black;">
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($pekerjaan as $pekerjaan) : ?>
+                                        <tr>
+                                            <th scope="row"><?= $i++; ?></th>
+                                            <td><?= $pekerjaan['periode_bekerja']; ?></td>
+                                            <td><?= $pekerjaan['perusahaan']; ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
-            <h4 id="heading-medsos">Media Sosial</h4>
+                <h4 id="heading-medsos">Media Sosial</h4>
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Facebook</label>
-                        <label type="text" class="form-control" name="facebook" disabled><?= $alumni['facebook']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Instagram</label>
-                        <label type="text" class="form-control" name="instagram" disabled><?= $alumni['instagram']; ?></label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Facebook</label>
+                            <input type="text" class="form-control" name="facebook" placeholder="<?= $alumni['facebook']; ?>" disabled>
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Instagram</label>
+                            <input type="text" class="form-control" name="instagram" placeholder="<?= $alumni['instagram']; ?>" disabled>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">LinkedIn</label>
-                        <label type="text" class="form-control" name="linkedin" disabled><?= $alumni['linkedin']; ?></label>
-                    </div>
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Twitter</label>
-                        <label type="text" class="form-control" name="twitter" disabled><?= $alumni['twitter']; ?></label>
-                    </div>
-                </div>
-            </div>
-
-            <h4 id="heading-histori">Histori Kuliah</h4>
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">IPK</label>
-                        <label type="text" class="form-control" name="ipk" required="required" disabled><?= $alumni['ipk']; ?></label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">LinkedIn</label>
+                            <input type="text" class="form-control" name="linkedin" placeholder="<?= $alumni['linkedin']; ?>" disabled>
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Twitter</label>
+                            <input type="text" class="form-control" name="twitter" placeholder="<?= $alumni['twitter']; ?>" disabled>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="" class="form-label-alumni">Judul Skripsi</label>
-                        <textarea id="area-judul-skripsi" class="btn-block" placeholder="<?= $alumni['judulskripsi']; ?>" disabled></textarea required="required" disabled>
+                <h4 id="heading-histori">Histori Kuliah</h4>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">IPK</label>
+                            <input type="text" class="form-control" name="ipk" placeholder="<?= $alumni['ipk']; ?>" required="required" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="" class="form-label-alumni">Judul Skripsi</label>
+                            <textarea style="width: 815px;" id="area-judul" placeholder="<?= $alumni['judulskripsi']; ?>" disabled></textarea required="required" disabled>
                 </div>
             </div>
         </div>
@@ -140,7 +151,7 @@
             <div class="row mb-2">
                 <div class="col">
                     <label for="" class="form-label-alumni">Bidang Minat</label>
-                    <label type="text" class="form-control" name="bidang-minat"  required="required" disabled><?= $alumni['bidangminat']; ?></label>
+                    <input type="text" class="form-control" name="bidang-minat" placeholder="<?= $alumni['bidangminat']; ?>" required="required" disabled>
                 </div>
             </div>
         </div>
@@ -149,56 +160,47 @@
             <div class="row">
                 <div class="col">
                     <label for="" class="form-label-alumni">Abstrak</label>
-                    <textarea id="area-abstrak" class="btn-block" placeholder="<?= $alumni['abstrak']; ?>" disabled></textarea required="required" disabled>
+                    <textarea id="area-abstrak" style="width: 815px; height: 250px;" placeholder="<?= $alumni['abstrak']; ?>" disabled></textarea required="required" disabled>
                 </div>
             </div>
         </div>
+
+        <h4 id="heading-penghargaan">Pencapaian & Penghargaan</h4>
 
         <div class="form-group">
-            <div class="row">
-                <div class="col">
-                    <label for="" class="form-label-alumni">Pencapaian & Penghargaan</label>
-                    <textarea id="area-pencapaian" class="btn-block" placeholder="<?= $alumni['pencapaian']; ?>" disabled></textarea required="required" disabled>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="row">
-                <div class="col">
-                <label for="" class="form-label-alumni">Transkrip Nilai Kuliah</label>
-                </div>
-            </div>
-        </div>
-
-        <a class="btn btn-danger btn-lg" style="color: white;" href="#" data-toggle="modal" data-target="#hapusModal"> Hapus </a>
-
-        <!-- Hapus Modal-->
-    <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin menghapus?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Pilih "Hapus" jika anda ingin menghapus.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-danger" type="submit" href="/admin/alumni">Hapus</button>
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-striped">
+                            <thead style="background-color: #102A6D; color:white">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Pencapaian</th>
+                                    <th scope="col">Tahun</th>
+                                    <th scope="col">Deskripsi Pencapaian</th>
+                                </tr>
+                            </thead>
+                            <tbody style="color: black;">
+                                <?php $i = 1; ?>
+                                <?php foreach ($pencapaian as $pencapaian) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $i++; ?></th>
+                                        <td><?= $pencapaian['pencapaian']; ?></td>
+                                        <td><?= $pencapaian['thpencapaian']; ?></td>
+                                        <td><?= $pencapaian['despencapaian']; ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+
+        <div class="form-group">
+            <button id="SimpanData" class="btn btn-lg" style="color:white; background-color: #102A6D;">Kembali</button>
         </div>
     </form>
-
-    
-
+    </div>
 </div>
-
-</div>
-<!-- /.container-fluid -->
+</center>
 
 <?= $this->endSection(); ?>

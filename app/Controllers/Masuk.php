@@ -29,6 +29,7 @@ class Masuk extends Controller
             if ($verify_pass) {
                 $ses_data = [
                     'username'    => $data['username'],
+                    'level'        => 'admin',
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);

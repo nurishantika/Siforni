@@ -7,15 +7,15 @@ use CodeIgniter\Model;
 class labModel extends Model
 {
     protected $table = 'lab';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_lab';
     protected $allowedFields = ['nama_lab'];
 
-    public function getlab($id = false)
+    public function getlab($id_lab = false)
     {
-        if ($id == false) {
+        if ($id_lab == false) {
             return $this->findAll();
         }
 
-        return $this->where(['id' => $id])->first();
+        return $this->where(['id_lab' => $id_lab])->first();
     }
 }

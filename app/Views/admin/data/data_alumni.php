@@ -8,7 +8,9 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col">
-                <h1 class="heading-data-alumni">Data Alumni</h1>
+                <center>
+                    <h1 class="heading-data-alumni" style="color: black;">Data Alumni</h1>
+                </center>
                 <form action="" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Search" name="keyword">
@@ -29,7 +31,7 @@
                             <th scope="col">Selengkapnya</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="color: black;">
                         <?php $i = 1 + (3 * ($currentPage - 1)); ?>
                         <?php foreach ($alumni as $alum) : ?>
                             <tr>

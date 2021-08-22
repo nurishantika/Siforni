@@ -29,6 +29,9 @@ class Login extends Controller
             if ($verify_pass) {
                 $ses_data = [
                     'email'    => $data['email'],
+                    'level' => 'alumni',
+                    'id_user' => $data['id_user'],
+                    'id_alumni' => $data['id_alumni'],
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);

@@ -66,9 +66,9 @@ class Laboratorium extends BaseController
         return redirect()->to('/laboratorium/lab');
     }
 
-    public function delete($id)
+    public function delete($id_lab)
     {
-        $this->labModel->delete($id);
+        $this->labModel->delete($id_lab);
         return redirect()->to('/laboratorium/lab');
     }
 }

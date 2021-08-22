@@ -36,53 +36,61 @@ $routes->get('/', 'Pages::index');
 
 // Admin's Routes
 
-$routes->get('/admin', 'admin::index');
+$routes->get('/admin', 'admin::index', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/berita/create', 'berita::create');
+$routes->get('/admin/berita/create', 'berita::create', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/lowongan/create', 'lowongan::create');
+$routes->get('/admin/lowongan/create', 'lowongan::create', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/berita/', 'berita::berita');
+$routes->get('/admin/berita/', 'berita::berita', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/lowongan/', 'lowongan::lowongan');
+$routes->get('/admin/lowongan/', 'lowongan::lowongan', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/data/data_alumni', 'alumni::alumni');
+$routes->get('/admin/data/data_alumni', 'alumni::alumni', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/data/create', 'alumni::nilai');
+$routes->get('/admin/data/create', 'alumni::nilai', ['filter' => 'auth_admin']);
 
-$routes->get('/nilai/create/(:segment)', 'nilai::create/$1');
+$routes->get('/nilai/create/(:segment)', 'nilai::create/$1', ['filter' => 'auth_admin']);
 
-$routes->delete('/alumni/(:num)', 'Alumni::delete/$1');
+$routes->delete('/alumni/(:num)', 'Alumni::delete/$1', ['filter' => 'auth_admin']);
 
-$routes->get('/nilai/(:num)', 'Nilai::detail/$1');
+$routes->get('/nilai/(:num)', 'Nilai::detail/$1', ['filter' => 'auth_admin']);
 
-$routes->delete('/berita/(:num)', 'berita::delete/$1');
+$routes->delete('/berita/(:num)', 'berita::delete/$1', ['filter' => 'auth_admin']);
 
-$routes->delete('/lowongan/(:num)', 'lowongan::delete/$1');
+$routes->delete('/lowongan/(:num)', 'lowongan::delete/$1', ['filter' => 'auth_admin']);
 
-$routes->delete('/admin/alumni/(:num)', 'admin::delete/$1');
+$routes->delete('/admin/alumni/(:num)', 'admin::delete/$1', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/berita/(:segment)', 'berita::detailadm/$1');
+$routes->get('/admin/berita/(:segment)', 'berita::detailadm/$1', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/data/detail/(:any)', 'alumni::detailalm/$1');
+$routes->get('/admin/data/detail/(:any)', 'alumni::detailalm/$1', ['filter' => 'auth_admin']);
 
-$routes->get('/admin/lowongan/(:segment)', 'lowongan::detailadm/$1');
+$routes->get('/admin/lowongan/(:segment)', 'lowongan::detailadm/$1', ['filter' => 'auth_admin']);
 
 // Alumni's Routes
 
-$routes->get('/alumni/homepage', 'alumni::homepage');
+$routes->get('/alumni/homepage', 'alumni::homepage', ['filter' => 'auth_alumni']);
 
-$routes->get('/alumni/data', 'alumni::data');
+$routes->get('/alumni/data', 'alumni::data', ['filter' => 'auth_alumni']);
 
-$routes->get('/alumni/berita', 'alumni::berita');
+$routes->get('/alumni/berita', 'alumni::berita', ['filter' => 'auth_alumni']);
 
-$routes->get('/berita_detail/(:segment)', 'alumni::berita_detail/$1');
+$routes->get('/berita_detail/(:segment)', 'alumni::berita_detail/$1', ['filter' => 'auth_alumni']);
 
-$routes->get('/alumni/lowongan', 'alumni::lowongan');
+$routes->get('/alumni/lowongan', 'alumni::lowongan', ['filter' => 'auth_alumni']);
 
-$routes->get('/lowongan_detail/(:segment)', 'alumni::lowongan_detail/$1');
+$routes->get('/lowongan_detail/(:segment)', 'alumni::lowongan_detail/$1', ['filter' => 'auth_alumni']);
 
-$routes->get('/alumni/detail/(:numeric)', 'alumni::detailed/$1');
+$routes->get('/alumni/profil', 'alumni::profil', ['filter' => 'auth_alumni']);
+
+$routes->get('/alumni/detailed/(:segment)', 'alumni::detailed/$1', ['filter' => 'auth_alumni']);
+
+$routes->get('/alumni/edit/(:segment)', 'alumni::edit/$1');
+
+$routes->get('/alumni/update', 'alumni::update');
+
+$routes->get('/delete_pekerjaan/(:any)', 'alumni::delete_pekerjaan/$1');
 
 // User's Routes
 
@@ -92,7 +100,7 @@ $routes->get('/admin', 'Admin::index', ['filter' => 'auth']);
 
 $routes->get('/alumni/create', 'alumni::create');
 
-$routes->get('/alumni/(:segment)', 'alumni::detail/$1');
+$routes->get('/alumni/detail/(:segment)', 'alumni::detail/$1');
 
 $routes->get('/berita/(:segment)', 'berita::detail/$1');
 

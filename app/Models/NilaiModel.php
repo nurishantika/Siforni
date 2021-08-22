@@ -11,6 +11,7 @@ class NilaiModel extends Model
     protected $primaryKey = 'id_nilai';
     protected $allowedFields = [
         'id_alumni',
+        'npm',
         'kalkulus_1',
         'prakt_struktur_data',
         'etika_profesi',
@@ -99,5 +100,10 @@ class NilaiModel extends Model
         $result = $this->findAll();
         // dd($this->db->getLastQuery());
         return $result;
+    }
+
+    public function search($keyword)
+    {
+        return $this->table('nilai')->like('nama', $keyword)->orLike('thmasuk', $keyword)->orLike('thlulus', $keyword);
     }
 }

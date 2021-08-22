@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 id="head-card"> INFO LOWONGAN PEKERJAAN </h1>
+                <h1 id="head-card" style="color: #102A6D;"> INFO LOWONGAN PEKERJAAN </h1>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <?php foreach ($lokerModel as $l) : ?>
                         <div class="col-sm-6 col-lg-4">
