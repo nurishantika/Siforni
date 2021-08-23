@@ -248,7 +248,7 @@ class Alumni extends BaseController
         return view("alumni/edit", $data);
     }
 
-    public function update($id_alumni)
+    public function update()
     {
         $deleted_pekerjaan = json_decode($this->request->getVar('deleted_pekerjaan'));
         $deleted_pencapaian = json_decode($this->request->getVar('deleted_pencapaian'));
@@ -275,10 +275,9 @@ class Alumni extends BaseController
 
         if (!$this->validate([
             'npm' => [
-                'rules' => 'required|is_unique[alumni.npm]|numeric',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'NPM wajib diisi!',
-                    'is_unique' => 'NPM sudah terdaftar!',
                     'numeric' => 'NPM hanya berisi angka!'
                 ]
             ],
@@ -290,21 +289,17 @@ class Alumni extends BaseController
                 ]
             ],
             'thmasuk' => [
-                'rules' => 'required|numeric|min_length[thmasuk,4]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'Tahun masuk wajib diisi!',
-                    'numeric' => 'Tahun masuk hanya mengandung angka!',
-                    'min_length' => 'Minimal 4 Karakter!'
-
+                    'numeric' => 'Tahun masuk hanya mengandung angka!'
                 ]
             ],
             'thlulus' => [
-                'rules' => 'required|numeric|min_length[thlulus,4]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'Tahun lulus wajib diisi!',
-                    'numeric' => 'Tahun lulus hanya mengandung angka!',
-                    'min_length' => 'Minimal 4 Karakter!'
-
+                    'numeric' => 'Tahun lulus hanya mengandung angka!'
                 ]
             ],
             'alamat' => [
@@ -326,19 +321,17 @@ class Alumni extends BaseController
                 ]
             ],
             'notelp' => [
-                'rules' => 'required|numeric|min_length[notelp,10]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'No.Telepon wajib diisi!',
-                    'numeric' => 'No.Telepon hanya mengandung angka!',
-                    'min_length' => 'No.Telepon 10 Karakter!'
+                    'numeric' => 'No.Telepon hanya mengandung angka!'
                 ]
             ],
             'notelp_ortu' => [
-                'rules' => 'required|numeric|min_length[notelp_ortu,10]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'No.Telepon wajib diisi!',
-                    'numeric' => 'No.Telepon hanya mengandung angka!',
-                    'min_length' => 'No.Telepon minimal 10 Karakter!'
+                    'numeric' => 'No.Telepon hanya mengandung angka!'
                 ]
             ],
             'noijazah' => [
@@ -374,11 +367,10 @@ class Alumni extends BaseController
             //     ]
             // ],
             'ipk' => [
-                'rules' => 'required|numeric|min_length[ipk,4]|decimal',
+                'rules' => 'required|numeric|decimal',
                 'errors' => [
                     'required' => 'IPK wajib diisi!',
                     'numeric' => 'IPK hanya mengandung angka dan titik!',
-                    'min_length' => 'Minimal 4 Karakter!',
                     'decimal' => 'Contoh "3.85"'
                 ]
             ],
@@ -402,9 +394,8 @@ class Alumni extends BaseController
                 ]
             ],
             'fotoalumni' => [
-                'rules' => 'uploaded[fotoalumni]|max_size[fotoalumni,5000]|is_image[fotoalumni]|mime_in[fotoalumni,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[fotoalumni,5000]|is_image[fotoalumni]|mime_in[fotoalumni,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'uploaded' => 'Foto wajib diupload!',
                     'max_size' => 'Ukuran foto maksimal 5MB!',
                     'is_image' => 'Yang anda pilih bukan gambar!',
                     'mime_in' => 'Yang anda pilih bukan gambar!'
