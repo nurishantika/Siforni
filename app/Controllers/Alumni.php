@@ -248,7 +248,7 @@ class Alumni extends BaseController
         return view("alumni/edit", $data);
     }
 
-    public function update()
+    public function update($id_alumni)
     {
         $deleted_pekerjaan = json_decode($this->request->getVar('deleted_pekerjaan'));
         $deleted_pencapaian = json_decode($this->request->getVar('deleted_pencapaian'));
@@ -271,7 +271,7 @@ class Alumni extends BaseController
         //include helper form
         helper(['form']);
 
-        dd($this->request->getPost('nama'));
+        // dd($this->request->getPost('nama'));
 
         if (!$this->validate([
             'npm' => [
@@ -413,7 +413,7 @@ class Alumni extends BaseController
         ])) {
             // $validation = \Config\Services::validation();
             // return redirect()->to('/alumni/create')->withInput()->with('validation', $validation);
-            $data['validation'] = $this->validator;
+            // $data['validation'] = $this->validator;
             return redirect()->to("/alumni/edit/$id_alumni")->withInput();
         }
 

@@ -157,11 +157,17 @@
                 <div class="row">
                     <div class="col">
                         <label for="facebook" class="form-label-alumni">Facebook</label>
-                        <input type="text" id="facebook" class="form-control" name="facebook" placeholder="Contoh: Budi Santoso" value="<?= $alumni['facebook']; ?>">
+                        <input type="text" id="facebook" class="form-control <?= ($validation->hasError('facebook')) ? 'is-invalid' : ''; ?>" name="facebook" placeholder="Contoh: Budi Santoso" value="<?= $alumni['facebook']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('facebook'); ?>
+                        </div>
                     </div>
                     <div class="col">
                         <label for="instagram" class="form-label-alumni">Instagram</label>
-                        <input type="text" id="instagram" class="form-control" name="instagram" placeholder="Contoh: budi.santoso" value="<?= $alumni['instagram']; ?>">
+                        <input type="text" id="instagram" class="form-control <?= ($validation->hasError('instagram')) ? 'is-invalid' : ''; ?>" name="instagram" placeholder="Contoh: budi.santoso" value="<?= $alumni['instagram']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('instagram'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -204,7 +210,7 @@
 
             <div class="form-group">
                 <label for="bidangminat" class="form-label-alumni">Bidang minat skripsi</label>
-                <select class="selectpicker btn dropdown-toggle custom-select" name="semester">
+                <select class="selectpicker btn dropdown-toggle custom-select" name="bidangminat">
                     <option value="">Pilih</option>
                     <?php foreach ($lab as $l) : ?>
                         <option value="<?= $l['nama_lab']; ?>" <?= $l['nama_lab'] == $alumni['bidangminat'] ? 'selected' : null; ?>><?= $l['nama_lab']; ?></option>
@@ -214,7 +220,7 @@
 
             <div class="form-group">
                 <label for="judulskripsi" class="form-label-alumni">Judul skripsi</label>
-                <textarea id="txtarea-judulskripsi" class="form-control judulskripsi <?= ($validation->hasError('judulskripsi')) ? 'is-invalid' : ''; ?>" name="judulskripsi"><?= $alumni['nama']; ?></textarea>
+                <textarea id="txtarea-judulskripsi" class="form-control judulskripsi <?= ($validation->hasError('judulskripsi')) ? 'is-invalid' : ''; ?>" name="judulskripsi"><?= $alumni['judulskripsi']; ?></textarea>
                 <div class="invalid-feedback">
                     <?= $validation->getError('judulskripsi'); ?>
                 </div>
@@ -222,7 +228,7 @@
 
             <div class="form-group">
                 <label for="abstrak" class="form-label-alumni">Abstrak skripsi</label>
-                <textarea id="txtarea-abstrak" style="width: 800px; height: 250px;" class="form-control abstrak <?= ($validation->hasError('abstrak')) ? 'is-invalid' : ''; ?>" name="abstrak"><?= $alumni['nama']; ?></textarea>
+                <textarea id="txtarea-abstrak" style="width: 800px; height: 250px;" class="form-control abstrak <?= ($validation->hasError('abstrak')) ? 'is-invalid' : ''; ?>" name="abstrak"><?= $alumni['abstrak']; ?></textarea>
                 <div class="invalid-feedback">
                     <?= $validation->getError('abstrak'); ?>
                 </div>
@@ -388,8 +394,8 @@
                         <textarea style="width: 815px; height: 100px;" id="despencapaian${jumlah_pencapaian}" class="despencapaian" name="despencapaian${jumlah_pencapaian}"></textarea>
                     </div>
 
-                    <div class="input-group-btn my-2">
-                        <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#hapusModal2" onclick="setDeletedPencapaian(${jumlah_pencapaian})"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
+                    <div class="input-group-btn mt-2">
+                    <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#hapusModal2" onclick="setDeletedPencapaian(${jumlah_pencapaian})"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
                     </div>
                 </div>`;
                             // $(".after-add-more-pencapaian").after(html);
