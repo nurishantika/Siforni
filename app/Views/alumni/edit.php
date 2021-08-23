@@ -37,14 +37,14 @@
                 <div class="row">
                     <div class="col">
                         <label for="thmasuk" class="form-label-alumni">Tahun masuk</label>
-                        <input type="text" id="thmasuk" class="form-control <?= ($validation->hasError('thmasuk')) ? 'is-invalid' : ''; ?>" name="thmasuk" placeholder="Contoh: 2015" value="<?= $alumni['thmasuk']; ?>">
+                        <input type="text" minlength="4" maxlength="4" id="thmasuk" class="form-control <?= ($validation->hasError('thmasuk')) ? 'is-invalid' : ''; ?>" name="thmasuk" placeholder="Contoh: 2015" value="<?= $alumni['thmasuk']; ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('thmasuk'); ?>
                         </div>
                     </div>
                     <div class="col">
                         <label for="thlulus" class="form-label-alumni">Tahun lulus</label>
-                        <input type="text" id="thlulus" class="form-control <?= ($validation->hasError('thlulus')) ? 'is-invalid' : ''; ?>" name="thlulus" placeholder="Contoh: 2019" value="<?= $alumni['thlulus']; ?>">
+                        <input type="text" minlength="4" maxlength="4" id="thlulus" class="form-control <?= ($validation->hasError('thlulus')) ? 'is-invalid' : ''; ?>" name="thlulus" placeholder="Contoh: 2019" value="<?= $alumni['thlulus']; ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('thlulus'); ?>
                         </div>
