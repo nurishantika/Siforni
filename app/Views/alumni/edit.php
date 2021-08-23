@@ -238,7 +238,8 @@
 
             <input type="hidden" id="jumlah_pencapaian" name="jumlah_pencapaian" value="<?= sizeof($pencapaian_alumni); ?>">
             <input type="hidden" id="deleted_pencapaian" name="deleted_pencapaian">
-            <?php $index2 = 1; ?> <div id="wrapper-pencapaian">
+            <?php $index2 = 1; ?>
+            <div id="wrapper-pencapaian">
                 <?php foreach ($pencapaian_alumni as $pencapaian) : ?>
                     <div class="input-group-md-6 control-group after-add-more-pencapaian" id="pencapaian<?= $index2; ?>">
                         <div class="row">
@@ -394,7 +395,7 @@
                         <textarea style="width: 815px; height: 100px;" id="despencapaian${jumlah_pencapaian}" class="despencapaian" name="despencapaian${jumlah_pencapaian}"></textarea>
                     </div>
 
-                    <div class="input-group-btn mt-2">
+                    <div class="input-group-btn my-2">
                     <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#hapusModal2" onclick="setDeletedPencapaian(${jumlah_pencapaian})"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
                     </div>
                 </div>`;
