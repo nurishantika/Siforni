@@ -250,7 +250,7 @@
                             </div>
                             <div class=" col">
                                 <label for="thpencapaian1" class="form-label-alumni">Tahun Pencapaian</label>
-                                <input type="text" class="form-control" id="pencapaian<?= $index2; ?>" name="thpencapaian<?= $index2; ?>" placeholder="Contoh: 2018" value="<?= $pencapaian['thpencapaian']; ?>">
+                                <input type="text" class="form-control" id="thpencapaian<?= $index2; ?>" name="thpencapaian<?= $index2; ?>" placeholder="Contoh: 2018" value="<?= $pencapaian['thpencapaian']; ?>">
                             </div>
                         </div>
                         <div class=" form-group mt-3">
@@ -355,10 +355,14 @@
                 function delete_pekerjaan() {
                     let deleted_id = document.getElementById(`id_pekerjaan${deletedPekerjaan}`).value;
                     $(`#pekerjaan${deletedPekerjaan}`).remove();
+                    console.log('deleted_id' + deleted_id);
+                    console.log(deleted_id != '');
                     --jumlah_pekerjaan;
                     document.getElementById('jumlah_pekerjaan').value = jumlah_pekerjaan;
-                    listDeletedPekerjaan.push(deleted_id);
-                    document.getElementById('deleted_pekerjaan').value = JSON.stringify(listDeletedPekerjaan);
+                    if (deleted_id != '') {
+                        listDeletedPekerjaan.push(deleted_id);
+                        document.getElementById('deleted_pekerjaan').value = JSON.stringify(listDeletedPekerjaan);
+                    }
                 }
 
                 function setDeletedPekerjaan(index) {
@@ -379,26 +383,26 @@
                             ++jumlah_pencapaian;
                             console.log(jumlah_pencapaian);
                             var html = `<div class="input-group-md-6 control-group after-add-more-pencapaian" id="pencapaian${jumlah_pencapaian}">
-                    <div class="row">
-                        <div class="col">
-                            <label for="pencapaian1" class="form-label-alumni">Pencapaian & Penghargaan</label>
-                            <input type="text" class="form-control" id="pencapaian${jumlah_pencapaian}" name="pencapaian${jumlah_pencapaian}" placeholder="Contoh: Juara 1 Lomba Koding>
-                            <input type="hidden" id="id_pencapaian${jumlah_pencapaian}" name="id_pencapaian${jumlah_pencapaian}" value="">
+                        <div class="row">
+                            <div class="col">
+                                <label for="pencapaian1" class="form-label-alumni">Pencapaian & Penghargaan</label>
+                                <input type="text" class="form-control" id="pencapaian${jumlah_pencapaian}" name="pencapaian${jumlah_pencapaian}" placeholder="Contoh: Juara 1 Lomba Koding">
+                                <input type="hidden" id="id_pencapaian${jumlah_pencapaian}" name="id_pencapaian${jumlah_pencapaian}" value="">
+                            </div>
+                            <div class=" col">
+                                <label for="thpencapaian1" class="form-label-alumni">Tahun Pencapaian</label>
+                                <input type="text" class="form-control" id="thpencapaian${jumlah_pencapaian}" name="thpencapaian${jumlah_pencapaian}" placeholder="Contoh: 2018">
+                            </div>
                         </div>
-                        <div class=" col">
-                            <label for="thpencapaian1" class="form-label-alumni">Tahun Pencapaian</label>
-                            <input type="text" class="form-control" id="pencapaian${jumlah_pencapaian}" name="thpencapaian${jumlah_pencapaian}" placeholder="Contoh: 2018">
+                        <div class=" form-group mt-3">
+                            <label for="despencapaian1" class="form-label-alumni">Deskripsi Pencapaian</label>
+                            <textarea style="width: 815px; height: 100px;" id="despencapaian${jumlah_pencapaian}" class="despencapaian" name="despencapaian${jumlah_pencapaian}"></textarea>
                         </div>
-                    </div>
-                    <div class=" form-group mt-3">
-                        <label for="despencapaian1" class="form-label-alumni">Deskripsi Pencapaian</label>
-                        <textarea style="width: 815px; height: 100px;" id="despencapaian${jumlah_pencapaian}" class="despencapaian" name="despencapaian${jumlah_pencapaian}"></textarea>
-                    </div>
 
-                    <div class="input-group-btn my-2">
-                    <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#hapusModal2" onclick="setDeletedPencapaian(${jumlah_pencapaian})"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
-                    </div>
-                </div>`;
+                        <div class="input-group-btn my-2">
+                            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#hapusModal2" onclick="setDeletedPencapaian(${jumlah_pencapaian})"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
+                        </div>
+                    </div>`;
                             // $(".after-add-more-pencapaian").after(html);
                             $(wrapper).append(html);
                             document.getElementById('jumlah_pencapaian').value = jumlah_pencapaian;
@@ -414,10 +418,14 @@
                 function delete_pencapaian() {
                     let deleted_id = document.getElementById(`id_pencapaian${deletedPencapaian}`).value;
                     $(`#pencapaian${deletedPencapaian}`).remove();
+                    console.log('deleted_id' + deleted_id);
+                    console.log(deleted_id != '');
                     --jumlah_pencapaian;
                     document.getElementById('jumlah_pencapaian').value = jumlah_pencapaian;
-                    listDeletedPencapaian.push(deleted_id);
-                    document.getElementById('deleted_pencapaian').value = JSON.stringify(listDeletedPencapaian);
+                    if (deleted_id != '') {
+                        listDeletedPencapaian.push(deleted_id);
+                        document.getElementById('deleted_pencapaian').value = JSON.stringify(listDeletedPencapaian);
+                    }
                 }
 
                 function setDeletedPencapaian(index2) {

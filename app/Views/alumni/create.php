@@ -68,14 +68,14 @@
             <div class="row">
                 <div class="col">
                     <label for="thmasuk" class="form-label-alumni">Tahun masuk</label>
-                    <input type="text" id="thmasuk" class="form-control <?= ($validation->hasError('thmasuk')) ? 'is-invalid' : ''; ?>" name="thmasuk" placeholder="Contoh: 2015" value="<?= old('thmasuk'); ?>">
+                    <input type="text" minlength="4" maxlength="4" id="thmasuk" class="form-control <?= ($validation->hasError('thmasuk')) ? 'is-invalid' : ''; ?>" name="thmasuk" placeholder="Contoh: 2015" value="<?= old('thmasuk'); ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('thmasuk'); ?>
                     </div>
                 </div>
                 <div class="col">
                     <label for="thlulus" class="form-label-alumni">Tahun lulus</label>
-                    <input type="text" id="thlulus" class="form-control <?= ($validation->hasError('thlulus')) ? 'is-invalid' : ''; ?>" name="thlulus" placeholder="Contoh: 2019" value="<?= old('thlulus'); ?>">
+                    <input type="text" minlength="4" maxlength="4" id="thlulus" class="form-control <?= ($validation->hasError('thlulus')) ? 'is-invalid' : ''; ?>" name="thlulus" placeholder="Contoh: 2019" value="<?= old('thlulus'); ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('thlulus'); ?>
                     </div>
@@ -95,14 +95,14 @@
             <div class="row">
                 <div class="col">
                     <label for="notelp" class="form-label-alumni">Nomor telepon</label>
-                    <input type="text" id="notelp" class="form-control <?= ($validation->hasError('notelp')) ? 'is-invalid' : ''; ?>" name="notelp" placeholder="Contoh: 0812345678" value="<?= old('notelp'); ?>">
+                    <input type="text" minlength="10" id="notelp" class="form-control <?= ($validation->hasError('notelp')) ? 'is-invalid' : ''; ?>" name="notelp" placeholder="Contoh: 0812345678" value="<?= old('notelp'); ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('notelp'); ?>
                     </div>
                 </div>
                 <div class="col">
                     <label for="notelp_ortu" class="form-label-alumni">Nomor telepon orang tua</label>
-                    <input type="text" id="notelp_ortu" class="form-control <?= ($validation->hasError('notelp')) ? 'is-invalid' : ''; ?>" name="notelp_ortu" placeholder="Contoh: 0812345678" value="<?= old('notelp'); ?>">
+                    <input type="text" minlength="10" id="notelp_ortu" class="form-control <?= ($validation->hasError('notelp')) ? 'is-invalid' : ''; ?>" name="notelp_ortu" placeholder="Contoh: 0812345678" value="<?= old('notelp'); ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('notelp'); ?>
                     </div>
@@ -224,7 +224,7 @@
             <div class="row">
                 <div class="col">
                     <label for="ipk" class="form-label-alumni">IPK</label>
-                    <input type="text" class="form-control <?= ($validation->hasError('ipk')) ? 'is-invalid' : ''; ?>" name="ipk" placeholder="Contoh: 3.54" value="<?= old('ipk'); ?>">
+                    <input type="text" minlength="4" class="form-control <?= ($validation->hasError('ipk')) ? 'is-invalid' : ''; ?>" name="ipk" placeholder="Contoh: 3.54" value="<?= old('ipk'); ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('ipk'); ?>
                     </div>

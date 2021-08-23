@@ -470,6 +470,7 @@ class Alumni extends BaseController
 
         $pekerjaan = (int)$this->request->getVar('jumlah_pekerjaan');
         for ($i = 1; $i <= $pekerjaan; $i++) {
+            $dataPekerjaan = "";
             $id_pekerjaan = $this->request->getVar("id_pekerjaan$i");
             if ($id_pekerjaan != "") {
                 $dataPekerjaan = [
@@ -479,10 +480,12 @@ class Alumni extends BaseController
                 ];
             } else {
                 $dataPekerjaan = [
+                    'id_alumni' => $id_alumni,
                     'periode_bekerja' => $this->request->getPost("periode_bekerja$i"),
                     'perusahaan' => $this->request->getPost("perusahaan$i")
                 ];
             }
+            // dd($dataPekerjaan);
             $this->InputPekerjaanModel->save($dataPekerjaan);
         }
 
@@ -507,6 +510,7 @@ class Alumni extends BaseController
                 ];
             } else {
                 $dataPencapaian = [
+                    'id_alumni' => $id_alumni,
                     'pencapaian' => $this->request->getVar("pencapaian$i"),
                     'thpencapaian' => $this->request->getVar("thpencapaian$i"),
                     'despencapaian' => $this->request->getVar("despencapaian$i"),
@@ -575,21 +579,18 @@ class Alumni extends BaseController
                 ]
             ],
             'thmasuk' => [
-                'rules' => 'required|numeric|min_length[thmasuk,4]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'Tahun masuk wajib diisi!',
-                    'numeric' => 'Tahun masuk hanya mengandung angka!',
-                    'min_length' => 'Minimal 4 Karakter!'
+                    'numeric' => 'Tahun masuk hanya mengandung angka!'
 
                 ]
             ],
             'thlulus' => [
-                'rules' => 'required|numeric|min_length[thlulus,4]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'Tahun lulus wajib diisi!',
                     'numeric' => 'Tahun lulus hanya mengandung angka!',
-                    'min_length' => 'Minimal 4 Karakter!'
-
                 ]
             ],
             'alamat' => [
@@ -611,19 +612,17 @@ class Alumni extends BaseController
                 ]
             ],
             'notelp' => [
-                'rules' => 'required|numeric|min_length[notelp,10]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'No.Telepon wajib diisi!',
-                    'numeric' => 'No.Telepon hanya mengandung angka!',
-                    'min_length' => 'No.Telepon 10 Karakter!'
+                    'numeric' => 'No.Telepon hanya mengandung angka!'
                 ]
             ],
             'notelp_ortu' => [
-                'rules' => 'required|numeric|min_length[notelp_ortu,10]',
+                'rules' => 'required|numeric',
                 'errors' => [
                     'required' => 'No.Telepon wajib diisi!',
-                    'numeric' => 'No.Telepon hanya mengandung angka!',
-                    'min_length' => 'No.Telepon minimal 10 Karakter!'
+                    'numeric' => 'No.Telepon hanya mengandung angka!'
                 ]
             ],
             'noijazah' => [
@@ -659,11 +658,10 @@ class Alumni extends BaseController
             //     ]
             // ],
             'ipk' => [
-                'rules' => 'required|numeric|min_length[ipk,4]|decimal',
+                'rules' => 'required|numeric|decimal',
                 'errors' => [
                     'required' => 'IPK wajib diisi!',
                     'numeric' => 'IPK hanya mengandung angka dan titik!',
-                    'min_length' => 'Minimal 4 Karakter!',
                     'decimal' => 'Contoh "3.85"'
                 ]
             ],
