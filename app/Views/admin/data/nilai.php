@@ -8,6 +8,14 @@
             <center>
                 <h1 class="heading-data-alumni" style="color: black;">Data Nilai Alumni</h1>
             </center>
+            <form action="" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search" name="keyword">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="submit" name="submit">Cari</button>
+                    </div>
+                </div>
+            </form>
             <table class="table table-striped">
                 <thead style="background-color: #102A6D; color:white">
                     <tr>

@@ -76,35 +76,46 @@ class Lowongan extends BaseController
 
     public function save()
     {
-        // validasi input
         if (!$this->validate([
             'judul_loker' => [
                 'rules' => 'required|is_unique[loker.judul_loker]',
                 'errors' => [
-                    'required' => 'Judul lowongan harus diisi',
-                    'is_unique' => 'Judul lowongan sudah ada'
+                    'required' => 'Judul lowongan pekerjaan harus diisi',
+                    'is_unique' => 'Judul lowongan pekerjaan sudah terdaftar'
                 ]
             ],
-            'isi_loker' => [
-                'rules' => 'required[loker.isi_loker]',
+            'foto_loker' => [
+                'rules' => 'uploaded[foto_loker]|max_size[foto_loker,5000]|is_image[foto_loker]|mime_in[foto_loker,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'required' => 'Isi lowongan harus diisi'
+                    'uploaded' => 'Pilih gambar cover lowongan pekerjaan',
+                    'max_size' => 'Ukuran gambar terlalu besar, maksimal 5MB',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
                 ]
             ]
         ])) {
-            session()->setFlashdata('error', $this->validator->listErrors());
-            return redirect()->back()->withInput();
-        } else {
-            print_r($this->request->getVar());
+            return redirect()->to('/admin/lowongan/create')->withInput();
         }
+
+        // ambil gambar
+        $fotoLoker = $this->request->getFile('foto_loker');
+        // dd($fotoBerita);
+
+        // generate nama foto random
+        $namaFoto = $fotoLoker->getRandomName();
+
+        //pindahkan file ke folder img
+        $fotoLoker->move('img', $namaFoto);
 
         $this->lokerModel->save([
             'judul_loker' => $this->request->getVar('judul_loker'),
-            'foto_loker' => $this->request->getVar('foto_loker'),
-            'isi_loker' => $this->request->getVar('isi_loker')
+            'isi_loker' => $this->request->getVar('isi_loker'),
+            'foto_loker' => $namaFoto
         ]);
 
-        return redirect()->to('/admin/lowongan');
+        session()->setFlashData('pesan', 'Lowongan pekerjaan baru berhasil ditambahkan');
+
+        return redirect()->to('/lowongan/lowongan');
     }
 
     public function delete($kode_loker)

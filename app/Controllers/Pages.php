@@ -26,18 +26,6 @@ class Pages extends BaseController
         echo view('pages/homepage', $data);
     }
 
-    // public function index()
-    // {
-    //     $berita = $this->beritaModel->findAll();
-    //     $this->beritaModel->select('*');
-    //     $this->beritaModel->from('berita');
-    //     $this->beritaModel->orderBy('kode_berita', 'DESC');
-    //     $this->beritaModel->limit(3, 0);
-    //     $query = $this->beritaModel->get();
-    //     return $query;
-    //     echo view('pages/homepage');
-    // }
-
     public function login()
     {
         $data = [

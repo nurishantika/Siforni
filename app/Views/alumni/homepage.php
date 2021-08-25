@@ -85,7 +85,7 @@
                     <div class="card mb-3" id="the-card">
                         <img src="/img/<?= $b['foto_berita']; ?>" class="card-img-top" id="img-card">
                         <div class="card-body">
-                            <a class="card-title" id="title-card" href="/berita/<?= $b['kode_berita']; ?>"><?= $b['judul_berita']; ?></a>
+                            <a class="card-title" id="title-card" href="/alumni/berita_detail/<?= $b['kode_berita']; ?>"><?= $b['judul_berita']; ?></a>
                             <p class="card-text" id="text-card"> <?= $b['created_at']; ?></p>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                     <div class="card mb-3" id="the-card">
                         <img src="/img/<?= $l['foto_loker']; ?>" class="card-img-top" id="img-card">
                         <div class="card-body">
-                            <a class="card-title" id="title-card" href="/lowongan/<?= $l['kode_loker']; ?>"><?= $l['judul_loker']; ?></a>
+                            <a class="card-title" id="title-card" href="/alumni/lowongan_detail/<?= $l['kode_loker']; ?>"><?= $l['judul_loker']; ?></a>
                             <p class="card-text" id="text-card"> <?= $l['created_at']; ?></p>
                         </div>
                     </div>

@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Pages::index');
 
+$routes->get('/pages/masuk', 'Masuk::index');
+
 // Admin's Routes
 
 $routes->get('/admin', 'admin::index', ['filter' => 'auth_admin']);
@@ -68,6 +70,10 @@ $routes->get('/admin/data/detail/(:any)', 'alumni::detailalm/$1', ['filter' => '
 
 $routes->get('/admin/lowongan/(:segment)', 'lowongan::detailadm/$1', ['filter' => 'auth_admin']);
 
+$routes->get('/berita/berita', 'berita::berita', ['filter' => 'auth_admin']);
+
+$routes->get('/lowongan/lowongan', 'lowongan::lowongan', ['filter' => 'auth_admin']);
+
 // Alumni's Routes
 
 $routes->get('/alumni/homepage', 'alumni::homepage', ['filter' => 'auth_alumni']);
@@ -76,21 +82,25 @@ $routes->get('/alumni/data', 'alumni::data', ['filter' => 'auth_alumni']);
 
 $routes->get('/alumni/berita', 'alumni::berita', ['filter' => 'auth_alumni']);
 
-$routes->get('/berita_detail/(:segment)', 'alumni::berita_detail/$1', ['filter' => 'auth_alumni']);
+$routes->get('/alumni/berita_detail/(:segment)', 'alumni::berita_detail/$1', ['filter' => 'auth_alumni']);
 
 $routes->get('/alumni/lowongan', 'alumni::lowongan', ['filter' => 'auth_alumni']);
 
-$routes->get('/lowongan_detail/(:segment)', 'alumni::lowongan_detail/$1', ['filter' => 'auth_alumni']);
+$routes->get('/alumni/lowongan_detail/(:segment)', 'alumni::lowongan_detail/$1', ['filter' => 'auth_alumni']);
 
 $routes->get('/alumni/profil', 'alumni::profil', ['filter' => 'auth_alumni']);
 
 $routes->get('/alumni/detailed/(:segment)', 'alumni::detailed/$1', ['filter' => 'auth_alumni']);
 
-$routes->get('/alumni/edit/(:segment)', 'alumni::edit/$1');
+$routes->get('/alumni/edit/(:segment)', 'alumni::edit/$1', ['filter' => 'auth_alumni']);
 
-$routes->get('/alumni/update', 'alumni::update');
+$routes->get('/alumni/update', 'alumni::update', ['filter' => 'auth_alumni']);
 
-$routes->get('/delete_pekerjaan/(:any)', 'alumni::delete_pekerjaan/$1');
+$routes->get('/delete_pekerjaan/(:any)', 'alumni::delete_pekerjaan/$1', ['filter' => 'auth_alumni']);
+
+$routes->get('/nilai/details/(:any)', 'nilai::details/$1', ['filter' => 'auth_alumni']);
+
+$routes->get('/nilai/nilai', 'nilai::nilai', ['filter' => 'auth_alumni']);
 
 // User's Routes
 

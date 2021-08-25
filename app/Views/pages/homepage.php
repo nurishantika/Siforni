@@ -12,13 +12,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/img/slidesatu.png" class="d-block w-100" alt="...">
+            <img src="/img/cover 1.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/img/slidedua.png" class="d-block w-100" alt="...">
+            <img src="/img/cover 2.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/img/slidetiga.png" class="d-block w-100" alt="...">
+            <img src="/img/cover 3.png" class="d-block w-100" alt="...">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
@@ -34,8 +34,6 @@
 <!-- Section Berita Alumni -->
 <div class="container">
     <h1 id="header-berita">BERITA ALUMNI TERKINI</h1>
-    <!-- <div class="box1"> -->
-    <!-- <div class="card" style="width: 18rem;"> -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($berita as $b) : ?>
             <div class="col-sm-6 col-lg-4">
@@ -49,23 +47,7 @@
             </div>
         <?php endforeach; ?>
     </div>
-    <!-- </div> -->
-    <!-- <div class="box2">
-        <div class="card" style="width: 18rem;">
-            <img src="/img/cready.png" class="card-img-top" alt="box1">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-    <div class="box3">
-        <div class="card" style="width: 18rem;">
-            <img src="/img/cready.png" class="card-img-top" alt="box1">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div> -->
+
     <div class="col-md-12 text-center">
         <a id="btnSelengkapnya1" type="button" class="btn btn-primary" href="/berita">Selengkapnya</a>
     </div>
@@ -89,22 +71,7 @@
         <?php endforeach; ?>
     </div>
 </div>
-<!-- <div class="card2">
-    <div class="card" style="width: 18rem;">
-        <img src="/img/cready.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-</div>
-<div class="card3">
-    <div class="card" style="width: 18rem;">
-        <img src="/img/cready.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-</div> -->
+
 <div class="col-md-12 text-center">
     <a id="btnSelengkapnya2" type="button" class="btn btn-primary" href="/lowongan">Selengkapnya</a>
 </div>

@@ -4,7 +4,7 @@
 <center>
     <div id="detail-alumni" class="signup-form" style="margin:auto; color:black;">
         <div class="col-md-9">
-            <form action="/alumni/homepage">
+            <form action="/alumni/data">
 
                 <h2 id="head-card" style="color: #2C5CD6;">Data Alumni</h2>
 

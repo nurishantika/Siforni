@@ -67,6 +67,7 @@ class Berita extends BaseController
 
     public function create()
     {
+        helper(['form']);
         $data = [
             'title' => 'Input Berita | Alumni SI UPNVJT',
             'validation' => \Config\Services::validation()
@@ -77,38 +78,46 @@ class Berita extends BaseController
 
     public function save()
     {
-
-        // validasi input
         if (!$this->validate([
             'judul_berita' => [
                 'rules' => 'required|is_unique[berita.judul_berita]',
                 'errors' => [
                     'required' => 'Judul berita harus diisi',
-                    'is_unique' => 'Judul berita sudah ada'
+                    'is_unique' => 'Judul berita sudah terdaftar'
                 ]
             ],
-            'isi_berita' => [
-                'rules' => 'required[berita.isi_berita]',
+            'foto_berita' => [
+                'rules' => 'uploaded[foto_berita]|max_size[foto_berita,5000]|is_image[foto_berita]|mime_in[foto_berita,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'required' => 'Isi berita harus diisi'
+                    'uploaded' => 'Pilih gambar cover berita',
+                    'max_size' => 'Ukuran gambar terlalu besar, maksimal 5MB',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
                 ]
             ]
         ])) {
-            session()->setFlashdata('error', $this->validator->listErrors());
-            return redirect()->back()->withInput();
-        } else {
-            print_r($this->request->getVar());
+            return redirect()->to('/admin/berita/create')->withInput();
         }
+
+        // ambil gambar
+        $fotoBerita = $this->request->getFile('foto_berita');
+        // dd($fotoBerita);
+
+        // generate nama foto random
+        $namaFoto = $fotoBerita->getRandomName();
+
+        //pindahkan file ke folder img
+        $fotoBerita->move('img', $namaFoto);
 
         $this->beritaModel->save([
             'judul_berita' => $this->request->getVar('judul_berita'),
             'isi_berita' => $this->request->getVar('isi_berita'),
-            'foto_berita' => $this->request->getVar('foto_berita')
+            'foto_berita' => $namaFoto
         ]);
 
         session()->setFlashData('pesan', 'Berita baru berhasil ditambahkan');
 
-        return redirect()->to('/admin/berita');
+        return redirect()->to('/berita/berita');
     }
 
     public function delete($kode_berita)
